@@ -62,7 +62,7 @@ public class ProductScanner {
 
                 // Write given products to the file
                 FileWriter writer = new FileWriter(file);
-                writer.write("12345, Coffee, 8.32\n67890, Muffin, 2.50");
+                writer.write("12345, Coffee, 8.32\n67890, Muffin, 2.50\n74923, Bagel, 7.99\n67420, Donuts, 2.00\n41414, Banana, 1.67");
                 writer.close();
                 System.out.println("Products wrote to the file.");
             } else {
@@ -91,7 +91,7 @@ public class ProductScanner {
 	 }
 
 	private int generateUPC() {
-		// Generate random UPC code between 0 and 1
+		// Generate random UPC code between 0 and 5
 		Random rand = new Random();
 		int upcCode = rand.nextInt(5);
 		System.out.println("Scanned UPC code: " + products[upcCode][0]);
@@ -127,5 +127,6 @@ public class ProductScanner {
 		this.scanButton = scanButton;
 	}	 
 	 
+
 
 }
