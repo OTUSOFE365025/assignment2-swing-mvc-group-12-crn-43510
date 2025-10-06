@@ -7,6 +7,10 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+// import for checkout display
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+
 public class View {
 	// View uses Swing framework to display UI to user
 	 private JFrame frame;
@@ -18,6 +22,7 @@ public class View {
 	 private JButton lastnameSaveButton;
 	 private JButton hello;
 	 private JButton bye;
+	 private Model m;
 	 
 	 public View(String title) {
 	  frame = new JFrame(title);
@@ -133,4 +138,24 @@ public class View {
 	  this.bye = bye;
 	 }
 	 
+	 public void Checkout(Model m) {
+		
+		// Create a new frame for checkout display
+    	JFrame checkoutFrame = new JFrame("Checkout");
+    	checkoutFrame.setSize(400, 300);
+    	checkoutFrame.setLocationRelativeTo(frame); // Center relative to main frame
+
+    	// Create a text area to display the checkout info
+    	JTextArea checkoutText = new JTextArea();
+    	checkoutText.setEditable(false); // Read-only
+    	checkoutText.setText(m.Checkout()); // Set checkout data from model
+
+    	// Add a scroll pane in case the content is long
+    	JScrollPane scrollPane = new JScrollPane(checkoutText);
+    	checkoutFrame.add(scrollPane);
+
+    	checkoutFrame.setVisible(true);
+		
+
+	 }
 }

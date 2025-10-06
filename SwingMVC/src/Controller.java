@@ -39,5 +39,9 @@ public class Controller {
 	 private void sayBye() {
 	  System.exit(0);
 	 }
+
+	 public void updateList(String index, String name, String price) {
+		model.updateList(index, name, price);
+	 }
 	 
 }
