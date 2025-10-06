@@ -143,14 +143,14 @@ public class View {
 		// Create a new frame for checkout display
     	JFrame checkoutFrame = new JFrame("Checkout");
     	checkoutFrame.setSize(400, 300);
-    	checkoutFrame.setLocationRelativeTo(frame); // Center relative to main frame
+    	checkoutFrame.setLocationRelativeTo(frame);
 
     	// Create a text area to display the checkout info
     	JTextArea checkoutText = new JTextArea();
-    	checkoutText.setEditable(false); // Read-only
-    	checkoutText.setText(m.Checkout()); // Set checkout data from model
+    	checkoutText.setEditable(false);
+    	checkoutText.setText(m.Checkout());
 
-    	// Add a scroll pane in case the content is long
+    	// Add a scroll pane in case the content cant fit
     	JScrollPane scrollPane = new JScrollPane(checkoutText);
     	checkoutFrame.add(scrollPane);
 
@@ -158,4 +158,5 @@ public class View {
 		
 
 	 }
+
 }
